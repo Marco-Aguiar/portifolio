@@ -168,6 +168,7 @@ a{
 
 .sobre a:hover{
     box-shadow: 0 0 5px #FFF;
+    background-color:mediumspringgreen;
 }
 
 .right{
@@ -293,6 +294,7 @@ a{
 
 .item-projetos a:hover{
     box-shadow: 0 0 5px #FFF;
+    background-color:mediumspringgreen;
 }
 
 /**************************************************/
