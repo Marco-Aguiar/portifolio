@@ -19,7 +19,7 @@ a{
     color: currentColor;
 }
 
-.container{
+.container {
     width: 100%;
     display: flex;
 }
@@ -34,6 +34,10 @@ a{
     position: fixed;
     align-items: center;
     justify-content: center;
+}
+
+.menu-header {
+    text-decoration: none;
 }
 
 .menu{
@@ -74,7 +78,7 @@ a{
 /*            CONTAINER - BANNER                  */
 /**************************************************/
 
-.banner{
+.banner {
     height: 100vh;
     width: 100%;
     background-image: url(archives/bg.jpg);
@@ -86,6 +90,10 @@ a{
     justify-content: center;
     flex-direction: column;
     color: #fff;
+}
+
+.cor-banner {
+    background-color: #090454;
 }
 
 .imgbanner{
@@ -121,14 +129,34 @@ a{
 
 .sobre{
     display: flex;
-    background-color:midnightblue;
     flex-direction: column;
     padding: 90px 100px 20px 100px;
     color: #fff;
 }
 
+.sobre-cor {
+    background-color: midnightblue;
+}
+
+#curriculo {
+    text-decoration: none;
+    color: #FFF;
+}
+
 .sobreupper{
     display: flex;
+}
+
+.img-sobre{
+    height: 250px;
+    width: 250px;
+    border-radius: 125px;
+    background-image: url(archives/imagem-sobre.jpeg);
+    background-size: cover;
+    background-position: bottom;
+    box-shadow: 10 10 30px #000;
+    margin-bottom: 30px;
+    margin-top: 50px;
 }
 
 
@@ -217,6 +245,47 @@ a{
     justify-content: space-evenly;
 }
 
+
+
+/**************************************************/
+/*            CONTAINER - CONHECIMENTOS           */
+/**************************************************/
+
+.conhecimentos {
+    background-color: #1d1d1d;
+    color: #FFF;
+}
+
+.conhecimento {
+    text-align: center !important;
+}
+
+.alinhamento {
+    text-align: center !important;
+    margin-top: 10px;
+}
+
+#titulo-frame {
+    color: crimson;
+    font-size: 30px;
+}
+
+#titulo-banco {
+    color: indigo;
+    font-size: 30px;
+}
+
+.espaçamento {
+    margin-top: 10px;
+    text-align: center !important;
+}
+
+#titulo-linguagem {
+    color: gold;
+    font-size: 30px;
+}
+
+
 /**************************************************/
 /*            CONTAINER - PROJETOS                */
 /**************************************************/
@@ -227,6 +296,15 @@ a{
     padding: 90px 50px 20px 50px;
     background-color: rgba(0, 0, 0, 0.90);
     color: #fff;
+}
+
+#botoes {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.projetos-cor {
+    background-color: #000;
 }
 
 .upper{
@@ -271,6 +349,7 @@ a{
     font-weight: bold;
     background-color: #05DBF2;
     display: flex;
+    color: #FFF;
     padding: 5px;
     width: 200px;
     align-items: center;
@@ -309,6 +388,10 @@ a{
     color: #fff;
 }
 
+.contatos{
+    background-color: #1d1d1d;
+}
+
 .contatolower{
     display: flex;
     height: 100%;
@@ -330,6 +413,15 @@ a{
     font-size: 20px;
     font-weight: 300;
     margin-top: 20px;
+}
+
+.hiperlink {
+    text-decoration: none !important;
+    color: #FFF;
+}
+
+.hiperlink:hover {
+    color: #05DBF2;
 }
 
 .contato li img{
@@ -357,6 +449,10 @@ a{
     font-size: 10px;
 }
 
+.footer-cor {
+    background-color: #000;
+}
+
 /**************************************************/
 /*               RESPONSIVIDADE                   */
 /**************************************************/
@@ -367,7 +463,7 @@ a{
     .projetos{
         padding: 75px 20px 20px 20px;
     }
-
+    
     .lower{
         grid-template-columns: repeat(2,1fr);
     }
