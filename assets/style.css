@@ -252,7 +252,7 @@ a{
 /**************************************************/
 
 .conhecimentos {
-    background-color: #1d1d1d;
+    background-color: #000000;
     color: #FFF;
 }
 
@@ -268,21 +268,25 @@ a{
 #titulo-frame {
     color: crimson;
     font-size: 30px;
+    font-weight: bold;
 }
 
 #titulo-banco {
     color: indigo;
     font-size: 30px;
+    font-weight: bold;
 }
 
 .espaçamento {
     margin-top: 10px;
     text-align: center !important;
+    font-size: 16px;
 }
 
 #titulo-linguagem {
     color: gold;
     font-size: 30px;
+    font-weight: bold;
 }
 
 
