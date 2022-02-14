@@ -30,10 +30,13 @@ a{
 
 .header{
     height: 75px;
-    background-color: rgba(0, 0, 0, 0.90);
     position: fixed;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
+}
+
+.cor-header {
+    background-color: #000;
 }
 
 .menu-header {
