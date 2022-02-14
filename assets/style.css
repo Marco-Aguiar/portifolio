@@ -255,7 +255,7 @@ a{
 /**************************************************/
 
 .conhecimentos {
-    background-color: #1b1a1a;
+    background-color: rgba(0, 0, 0, 0.90);
     color: #FFF;
 }
 
@@ -301,7 +301,6 @@ a{
     display: flex;
     flex-direction: column;
     padding: 90px 50px 20px 50px;
-    background-color: rgba(0, 0, 0, 0.90);
     color: #fff;
 }
 
@@ -311,7 +310,7 @@ a{
 }
 
 .projetos-cor {
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.90);
 }
 
 .upper{
@@ -396,7 +395,7 @@ a{
 }
 
 .contatos{
-    background-color: #1d1d1d;
+    background-color: #000000;
 }
 
 .contatolower{
