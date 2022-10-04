@@ -16,6 +16,15 @@
     }
   });
 
+  const card = document.querySelector("#card")
+            card.addEventListener("click", (e) => {
+                card.classList.toggle("flip")
+                document.querySelector("#sobremim").click()
+                setTimeout(() => {
+                  card.classList.toggle("flip")
+                }, "2000")
+            })
+
   // Hero typed
   if ($('.typed').length) {
     var typed_strings = $(".typed").data('typed-items');

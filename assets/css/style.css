@@ -30,6 +30,53 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
+
+.face{
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: absolute;
+  
+}
+
+@media (max-width: 1024px) {
+  #navbar{display: none;}
+  .btn-toggle{display: block;}
+}
+
+#front{
+  background-color: #0049b6;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 100px;
+}
+
+#back {
+  background-color: blueviolet;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  padding: 10px;
+  margin-bottom: 100px;
+}
+
+.flip{
+  transform: rotateY(180deg);
+}
+
+#card{
+  display: flex;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transition: all .5s;
+  margin: 20px;
+
+}
+
 .back-to-top {
   position: fixed;
   display: none;
@@ -139,6 +186,11 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 992px) {
   #main {
     margin-left: 100px;
+  }
+
+  #card{
+    display: none;
+    align-items: center;
   }
 }
 
