@@ -966,6 +966,39 @@ section {
   background: #fff;
 }
 
+.inputsEmail {
+  border-radius: 10px;
+  background-color: #61a5e4;
+  border: none;
+  color: black;
+  font-weight: 500;
+  font-size: medium;
+  width: 250px;
+  height: 30px;
+  padding-left: 12px;
+}
+
+#textarea {
+  height: 70px;
+}
+
+.botaoEmail {
+  border-radius: 10px;
+  border: none;
+  background-color: #2d16aa;
+  width: 140px;
+  color: white;
+  height: 35px;
+  align-items: center;
+}
+
+.botaoEmail:hover {
+  background-color: #4553cf;
+  color: white;
+  transition: 0.6s;
+}
+
+
 .contact .info i {
   font-size: 20px;
   color: #0563bb;
