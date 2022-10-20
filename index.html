@@ -42,7 +42,6 @@
   <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
   <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -117,7 +116,9 @@
             <p class="font-italic">
               Sou desenvolvedor Full-Stack, atualmente desenvolvendo projetos em Java com aplicação em Angular e VueJs.
               Comecei a estudar programação em 2019 e desde então estou até os dias atuais.</p>
-            <p> Recentemente, finalizei um curso de <b>AWS Academy Cloud Foundation</b> lecionado pela <b>Amazon</b>.<br> E, em sequência iniciei um curso focado em <b>React</b> pela plataforma <b>Rocketseat</b>.</p>
+            <p> Recentemente, finalizei um curso de <b>AWS Academy Cloud Foundation</b> lecionado pela
+              <b>Amazon</b>.<br> E, em sequência iniciei um curso focado em <b>React</b> pela plataforma
+              <b>Rocketseat</b>.</p>
             <div class="row">
               <div class="col-lg-6">
                 <ul>
@@ -504,19 +505,27 @@
 
 
         <div>
-        <form action="https://formspree.io/f/xqkjlvdr" method="POST">
-          <h4 class=" mb-3 email">Email:</h4>
-          <div>
-            <input class="inputsEmail" type="email" name="email">
-          </div>
+          <form action="https://formspree.io/f/xqkjlvdr" method="POST">
+            <h4 class=" mb-3 email">Email:</h4>
+            <div>
+              <input class="inputsEmail" type="email" name="email">
+            </div>
             <h4 class="mt-3 mb-3 mensagem">Mensagem:</h4>
             <div>
               <textarea id="textarea" class="inputsEmail" name="message"></textarea>
             </div>
             <div>
-              <button class="mt-3 mb-5 botaoEmail" type="submit">Enviar</button>
+              <button id="botaoSend" class="botaoEmail">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send" viewBox="0 0 16 16">
+                  <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"/>
+                </svg>
+                <div class="wrapper">
+                  <i class="bi bi-send"></i>
+                  <span id="spanButton">Enviar</span>
+                </div>
+              </button>
             </div>
-        </form>
+          </form>
         </div>
 
 
