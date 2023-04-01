@@ -1104,9 +1104,9 @@ section {
 
 .inputsEmail {
   border-radius: 10px;
-  background-color: #61a5e4;
+  background-color: #61a5e4 !important;
   border: none;
-  color: black;
+  color: rgb(0, 0, 0);
   font-weight: 500;
   font-size: medium;
   width: 250px;
