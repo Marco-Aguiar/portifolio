@@ -38,6 +38,17 @@
     });
   }
 
+  const botaoModal = document.getElementById('botaoEmail');
+  const botaoEnviar = document.getElementById('botaoSend');
+  const modal = document.querySelector("dialog");
+
+  botaoModal.onclick = function() {
+    modal.showModal()
+    setTimeout(() => {
+      botaoEnviar.click()
+    }, 1500)
+  };
+
   // Smooth scroll for the navigation menu and links with .scrollto classes
   $(document).on('click', '.nav-menu a, .scrollto', function(e) {
     if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
