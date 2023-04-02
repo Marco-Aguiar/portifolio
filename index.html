@@ -486,11 +486,13 @@
           <input type="hidden" name="accessKey" value="bda3d26e-bc25-48a0-825e-73091cb647f6">
           <h4 class="email">Email:</h4>
           <div>
-            <input type="text" name="email" class="mb-3 inputsEmail">
+            <input id="inputEmail" type="text" name="email" class="mb-3 inputsEmail">
+            <p id="erroEmail" style="color: red; font-weight: 500; display: none;">Preencha este campo!</p>
           </div>
           <h4 class="email mensagem">Mensagem:</h4>
           <div>
             <textarea name="message" id="textarea" class="inputsEmail"></textarea>
+            <p id="erroMensagem" style="color: red; font-weight: 500; display: none;">Preencha este campo!</p>
           </div>
 
           <input type="hidden" name="redirectTo" value="https://aguiarprogrammer.vercel.app">
