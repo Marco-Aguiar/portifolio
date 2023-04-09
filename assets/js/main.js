@@ -41,9 +41,6 @@
   const botaoModal = document.getElementById('botaoEmail');
   const botaoEnviar = document.getElementById('botaoSend');
   const modal = document.querySelector("dialog");
-  const erroEmail = document.getElementById('erroEmail');
-  const inputEmail = document.getElementById('inputEmail');
-  const erroMensagem = document.getElementById('erroMensagem');
 
   botaoModal.onclick = function () {
     if (document.getElementById("inputEmail").value.length == 0) {
