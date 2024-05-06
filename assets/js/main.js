@@ -43,7 +43,32 @@
   const modal = document.querySelector("dialog");
 
   botaoModal.onclick = function () {
-    {
+    //rever lógica
+    if (document.getElementById("inputNome").value.length == 0) {
+      document.getElementById('erroNome').style.display = "block";
+      document.getElementById('erroMensagem').style.display = "none";
+      document.getElementById('erroAssunto').style.display = "none";
+      document.getElementById('erroEmail').style.display = "none";
+    } else if (document.getElementById("inputEmail").value.length == 0) {
+      document.getElementById('erroNome').style.display = "none";
+      document.getElementById('erroMensagem').style.display = "none";
+      document.getElementById('erroAssunto').style.display = "none";
+      document.getElementById('erroEmail').style.display = "block";
+    } else if (document.getElementById("inputAssunto").value.length == 0) {
+      document.getElementById('erroNome').style.display = "none";
+      document.getElementById('erroMensagem').style.display = "none";
+      document.getElementById('erroAssunto').style.display = "block";
+      document.getElementById('erroEmail').style.display = "none";
+    } else if (document.getElementById("inputMensagem").value.length == 0) {
+      document.getElementById('erroNome').style.display = "none";
+      document.getElementById('erroMensagem').style.display = "block";
+      document.getElementById('erroAssunto').style.display = "none";
+      document.getElementById('erroEmail').style.display = "none";
+    } else {
+      document.getElementById('erroNome').style.display = "none";
+      document.getElementById('erroMensagem').style.display = "none";
+      document.getElementById('erroAssunto').style.display = "none";
+      document.getElementById('erroEmail').style.display = "none";
       modal.showModal()
       setTimeout(() => {
         botaoEnviar.click()
