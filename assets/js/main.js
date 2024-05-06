@@ -43,15 +43,7 @@
   const modal = document.querySelector("dialog");
 
   botaoModal.onclick = function () {
-    if (document.getElementById("inputEmail").value.length == 0) {
-      document.getElementById('erroEmail').style.display = "block";
-      document.getElementById('erroMensagem').style.display = "none";
-    } else if (document.getElementById("textarea").value.length == 0) {
-      document.getElementById('erroMensagem').style.display = "block";
-      document.getElementById('erroEmail').style.display = "none";
-    } else {
-      document.getElementById('erroMensagem').style.display = "none";
-      document.getElementById('erroEmail').style.display = "none";
+    {
       modal.showModal()
       setTimeout(() => {
         botaoEnviar.click()
