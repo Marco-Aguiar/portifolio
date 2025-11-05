@@ -1,9 +1,10 @@
 /**
-* Template Name: MyResume - v2.1.0
-* Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+ * Template Name: MyResume - v2.1.0
+ * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
+ * Author: BootstrapMade.com
+ * License: https://bootstrapmade.com/license/
+ */
+
 !(function ($) {
   "use strict";
 
@@ -16,19 +17,19 @@
     }
   });
 
-  const card = document.querySelector("#card")
+  const card = document.querySelector("#card");
   card.addEventListener("click", (e) => {
-    card.classList.toggle("flip")
-    document.querySelector("#sobremim").click()
+    card.classList.toggle("flip");
+    document.querySelector("a[href='#about']").click();
     setTimeout(() => {
-      card.classList.toggle("flip")
-    }, "2000")
-  })
+      card.classList.toggle("flip");
+    }, 2000);
+  });
 
-  // Hero typed
+  // Hero typed effect
   if ($('.typed').length) {
-    var typed_strings = $(".typed").data('typed-items');
-    typed_strings = typed_strings.split(',')
+    let typed_strings = $(".typed").data('typed-items');
+    typed_strings = typed_strings.split(',');
     new Typed('.typed', {
       strings: typed_strings,
       loop: true,
@@ -38,47 +39,49 @@
     });
   }
 
-  const botaoModal = document.getElementById('botaoEmail');
-  const botaoEnviar = document.getElementById('botaoSend');
+  // Form validation and modal logic
+  const modalButton = document.getElementById('botaoEmail');
+  const hiddenSubmitButton = document.getElementById('botaoSend');
   const modal = document.querySelector("dialog");
 
-  botaoModal.onclick = function () {
-    //rever lógica
-    if (document.getElementById("inputNome").value.length == 0) {
-      document.getElementById('erroNome').style.display = "block";
-      document.getElementById('erroMensagem').style.display = "none";
-      document.getElementById('erroAssunto').style.display = "none";
-      document.getElementById('erroEmail').style.display = "none";
-    } else if (document.getElementById("inputEmail").value.length == 0) {
-      document.getElementById('erroNome').style.display = "none";
-      document.getElementById('erroMensagem').style.display = "none";
-      document.getElementById('erroAssunto').style.display = "none";
-      document.getElementById('erroEmail').style.display = "block";
-    } else if (document.getElementById("inputAssunto").value.length == 0) {
-      document.getElementById('erroNome').style.display = "none";
-      document.getElementById('erroMensagem').style.display = "none";
-      document.getElementById('erroAssunto').style.display = "block";
-      document.getElementById('erroEmail').style.display = "none";
-    } else if (document.getElementById("inputMensagem").value.length == 0) {
-      document.getElementById('erroNome').style.display = "none";
-      document.getElementById('erroMensagem').style.display = "block";
-      document.getElementById('erroAssunto').style.display = "none";
-      document.getElementById('erroEmail').style.display = "none";
+  modalButton.onclick = function () {
+    const nameValue = document.getElementById("inputNome").value.trim();
+    const emailValue = document.getElementById("inputEmail").value.trim();
+    const subjectValue = document.getElementById("inputAssunto").value.trim();
+    const messageValue = document.getElementById("inputMensagem").value.trim();
+
+    if (!nameValue) {
+      showError('erroNome');
+    } else if (!emailValue) {
+      showError('erroEmail');
+    } else if (!subjectValue) {
+      showError('erroAssunto');
+    } else if (!messageValue) {
+      showError('erroMensagem');
     } else {
-      document.getElementById('erroNome').style.display = "none";
-      document.getElementById('erroMensagem').style.display = "none";
-      document.getElementById('erroAssunto').style.display = "none";
-      document.getElementById('erroEmail').style.display = "none";
-      modal.showModal()
+      clearErrors();
+      modal.showModal();
       setTimeout(() => {
-        botaoEnviar.click()
-      }, 1500)
+        hiddenSubmitButton.click();
+      }, 1500);
     }
   };
 
-  // Smooth scroll for the navigation menu and links with .scrollto classes
+  function showError(errorId) {
+    clearErrors();
+    document.getElementById(errorId).style.display = "block";
+  }
+
+  function clearErrors() {
+    ['erroNome', 'erroEmail', 'erroAssunto', 'erroMensagem'].forEach(id => {
+      document.getElementById(id).style.display = "none";
+    });
+  }
+
+  // Smooth scroll for navigation
   $(document).on('click', '.nav-menu a, .scrollto', function (e) {
-    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && 
+        location.hostname == this.hostname) {
       var target = $(this.hash);
       if (target.length) {
         e.preventDefault();
@@ -89,11 +92,13 @@
           scrollTop: scrollto
         }, 1500, 'easeInOutExpo');
 
+        // Update nav menu active state
         if ($(this).parents('.nav-menu, .mobile-nav').length) {
           $('.nav-menu .active, .mobile-nav .active').removeClass('active');
           $(this).closest('li').addClass('active');
         }
 
+        // Close mobile nav if open
         if ($('body').hasClass('mobile-nav-active')) {
           $('body').removeClass('mobile-nav-active');
           $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
@@ -103,12 +108,12 @@
     }
   });
 
-  // Activate smooth scroll on page load with hash links in the url
+  // Activate smooth scroll on page load if hash exists
   $(document).ready(function () {
     if (window.location.hash) {
-      var initial_nav = window.location.hash;
-      if ($(initial_nav).length) {
-        var scrollto = $(initial_nav).offset().top;
+      var initialHash = window.location.hash;
+      if ($(initialHash).length) {
+        var scrollto = $(initialHash).offset().top;
         $('html, body').animate({
           scrollTop: scrollto
         }, 1500, 'easeInOutExpo');
@@ -116,11 +121,13 @@
     }
   });
 
+  // Toggle mobile nav
   $(document).on('click', '.mobile-nav-toggle', function (e) {
     $('body').toggleClass('mobile-nav-active');
     $('.mobile-nav-toggle i').toggleClass('icofont-navigation-menu icofont-close');
   });
 
+  // Hide mobile nav when clicking outside of it
   $(document).click(function (e) {
     var container = $(".mobile-nav-toggle");
     if (!container.is(e.target) && container.has(e.target).length === 0) {
@@ -132,29 +139,28 @@
   });
 
   // Navigation active state on scroll
-  var nav_sections = $('section');
-  var main_nav = $('.nav-menu, #mobile-nav');
+  const navSections = $('section');
+  const mainNav = $('.nav-menu, #mobile-nav');
 
   $(window).on('scroll', function () {
-    var cur_pos = $(this).scrollTop() + 300;
+    const scrollPos = $(this).scrollTop() + 300;
 
-    nav_sections.each(function () {
-      var top = $(this).offset().top,
-        bottom = top + $(this).outerHeight();
+    navSections.each(function () {
+      const top = $(this).offset().top;
+      const bottom = top + $(this).outerHeight();
 
-      if (cur_pos >= top && cur_pos <= bottom) {
-        if (cur_pos <= bottom) {
-          main_nav.find('li').removeClass('active');
-        }
-        main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
+      if (scrollPos >= top && scrollPos <= bottom) {
+        mainNav.find('li').removeClass('active');
+        mainNav.find(`a[href="#${$(this).attr('id')}"]`).parent('li').addClass('active');
       }
-      if (cur_pos < 200) {
+
+      if (scrollPos < 200) {
         $(".nav-menu ul:first li:first").addClass('active');
       }
     });
   });
 
-  // Back to top button
+  // Back to top button logic
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
       $('.back-to-top').fadeIn('slow');
@@ -170,13 +176,13 @@
     return false;
   });
 
-  // jQuery counterUp
+  // Counter
   $('[data-toggle="counter-up"]').counterUp({
     delay: 10,
     time: 1000
   });
 
-  // Skills section
+  // Skills section animation
   $('.skills-content').waypoint(function () {
     $('.progress .progress-bar').each(function () {
       $(this).css("width", $(this).attr("aria-valuenow") + '%');
@@ -185,7 +191,7 @@
     offset: '80%'
   });
 
-  // Init AOS
+  // Initialize AOS animations
   function aos_init() {
     AOS.init({
       duration: 1000,
@@ -193,7 +199,7 @@
     });
   }
 
-  // Porfolio isotope and filter
+  // Portfolio isotope and filter
   $(window).on('load', function () {
     var portfolioIsotope = $('.portfolio-container').isotope({
       itemSelector: '.portfolio-item'
@@ -209,17 +215,14 @@
       aos_init();
     });
 
-    // Initiate venobox (lightbox feature used in portofilo)
     $('.venobox').venobox({
       'share': false
     });
 
-    // Initiate aos_init() function
     aos_init();
-
   });
 
-  // Testimonials carousel (uses the Owl Carousel library)
+  // Testimonials carousel
   $(".testimonials-carousel").owlCarousel({
     autoplay: true,
     dots: true,
